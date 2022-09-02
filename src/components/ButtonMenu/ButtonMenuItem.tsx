@@ -1,3 +1,4 @@
+/** @jsxImportSource theme-ui */
 import React from "react";
 import styled from "styled-components";
 import Button from "../Button/Button";
@@ -6,22 +7,30 @@ import { ButtonMenuItemProps } from "./types";
 
 type InactiveButtonProps = {
   colorKey: "primary" | "textSubtle";
+  fontFamily?: string;
+  fontSize?: string;
+  isMobile?: boolean;
 } & ButtonMenuItemProps;
 
 const InactiveButton = styled(Button)<InactiveButtonProps>`
   background-color: transparent;
-  color: ${({ theme, colorKey }) => theme.colors[colorKey]};
-
+  color: rgba(122, 122, 122, 1);
   &:hover:not(:disabled):not(:active) {
     background-color: transparent;
   }
+  font-size: ${({ fontSize }) => fontSize || "16px"};
+  display: flex;
+  align-items: center;
 `;
 
 const ButtonMenuItem: React.FC<ButtonMenuItemProps> = ({
   isActive = false,
-  size = sizes.MD,
+  size = sizes.MEDIUM,
   variant = variants.PRIMARY,
   as,
+  fontFamily,
+  fontSize,
+  isMobile,
   ...props
 }) => {
   if (!isActive) {
@@ -30,13 +39,30 @@ const ButtonMenuItem: React.FC<ButtonMenuItemProps> = ({
         forwardedAs={as}
         size={size}
         variant="tertiary"
-        colorKey={variant === variants.PRIMARY ? "primary" : "textSubtle"}
+        colorKey={variant === variants.PRIMARY || variants.PRIMARY ? "primary" : "textSubtle"}
+        fontFamily={fontFamily}
+        fontSize={fontSize}
+        isMobile={isMobile}
         {...props}
       />
     );
   }
 
-  return <Button as={as} size={size} variant={variant} {...props} />;
+  return (
+    <Button
+      as={as}
+      size={size}
+      variant={variant}
+      isMobile={isMobile}
+      fontFamily={fontFamily}
+      fontSize={fontSize}
+      sx={{
+        display: "flex",
+        alignItems: "center",
+      }}
+      {...props}
+    />
+  );
 };
 
 export default ButtonMenuItem;

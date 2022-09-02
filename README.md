@@ -1,20 +1,21 @@
-# DEX Finance UIkit
+# ApeSwap UIkit
 
-DEX Finance UIkit is a set of React components and hooks used to build pages on DEX Finance's apps. It also contains a theme file for dark and light mode.
+
+ApeSwap UIkit is a set of React components and hooks used to build pages on ApeSwap's apps. It also contains a theme file for dark and light mode.
 
 ## Install
 
-`yarn add @dex-libs/uikit`
+`yarn add @apeswapfinance/uikit`
 
 ## Setup
 
 ### Theme
 
-Before using DEX Finance UIkit, you need to provide the theme file to styled-component.
+Before using ApeSwap UIkit, you need to provide the theme file to styled-component.
 
 ```
 import { ThemeProvider } from 'styled-components'
-import { light, dark } from '@dex-libs/uikit'
+import { light, dark } from '@apeswapfinance/uikit'
 ...
 <ThemeProvider theme={isDark}>...</ThemeProvider>
 ```
@@ -24,7 +25,7 @@ import { light, dark } from '@dex-libs/uikit'
 A reset CSS is available as a global styled component.
 
 ```
-import { ResetCSS } from '@dex-libs/uikit'
+import { ResetCSS } from '@apeswapfinance/uikit'
 ...
 <ResetCSS />
 ```

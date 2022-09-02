@@ -5,45 +5,41 @@ import Toggle from "../../components/Toggle/Toggle";
 const handleChange = jest.fn();
 
 it("renders correctly", () => {
-  const { asFragment } = renderWithTheme(<Toggle checked onChange={handleChange} scale="md" />);
+  const { asFragment } = renderWithTheme(<Toggle checked onChange={handleChange} labels={["Switch1", "Switch2"]} />);
   expect(asFragment()).toMatchInlineSnapshot(`
     <DocumentFragment>
       <div
-        class="sc-dlfnbm jUupPG"
-        scale="md"
+        class="css-5f219a-Toggle"
       >
-        <input
-          checked=""
-          class="sc-gsTCUz kVKCrS"
-          scale="md"
-          type="checkbox"
-        />
         <div
-          class="sc-bdfBwQ dtgDXM"
-          scale="md"
-        />
-      </div>
-    </DocumentFragment>
-  `);
-});
-
-it("renders correctly scale sm", () => {
-  const { asFragment } = renderWithTheme(<Toggle checked onChange={handleChange} scale="sm" />);
-  expect(asFragment()).toMatchInlineSnapshot(`
-    <DocumentFragment>
-      <div
-        class="sc-dlfnbm iWurnU"
-        scale="sm"
-      >
-        <input
-          checked=""
-          class="sc-gsTCUz fmfbFq"
-          scale="sm"
-          type="checkbox"
-        />
+          class="css-hgu77l-Toggle"
+        >
+          <span
+            class="css-1jxlto-Toggle"
+          >
+            Switch1
+          </span>
+        </div>
         <div
-          class="sc-bdfBwQ bvsyPw"
-          scale="sm"
+          class="css-hgu77l-Toggle"
+        >
+          <span
+            class="css-1jxlto-Toggle"
+          >
+            Switch2
+          </span>
+        </div>
+        <button
+          class="css-1iz1aqp-Toggle"
+        >
+          Switch2 
+        </button>
+        <input
+          aria-hidden="true"
+          checked=""
+          class="css-1hokic7-Toggle"
+          tabindex="-1"
+          type="checkbox"
         />
       </div>
     </DocumentFragment>

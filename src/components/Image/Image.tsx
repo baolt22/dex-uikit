@@ -21,12 +21,14 @@ const Placeholder = styled.div`
   height: 100%;
 `;
 
+const isBrowser = typeof window === "object";
+
 const Image: React.FC<ImageProps> = ({ src, alt, ...otherProps }) => {
   const imgRef = useRef(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const img = (imgRef.current as unknown) as HTMLImageElement;
+    const img = imgRef.current as unknown as HTMLImageElement;
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         const { isIntersecting } = entry;
@@ -45,7 +47,7 @@ const Image: React.FC<ImageProps> = ({ src, alt, ...otherProps }) => {
 
   return (
     <Wrapper ref={imgRef} {...otherProps}>
-      {isLoaded ? <StyledImage src={src} alt={alt} /> : <Placeholder />}
+      {!isBrowser || isLoaded ? <StyledImage src={src} alt={alt} /> : <Placeholder />}
     </Wrapper>
   );
 };
