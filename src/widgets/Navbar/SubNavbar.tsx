@@ -29,7 +29,7 @@ interface SubNavbarProps {
     tag: string;
     navItem: string;
   }[];
-  runFiat: () => void;
+  runFiat?: () => void;
   t: (text: string) => string;
 }
 const StyledLink = styled.a`
@@ -107,62 +107,7 @@ const SubNavbar: React.FC<SubNavbarProps> = ({
         })}
       </Box>
       <Box sx={styles.navImage}>{imageElement}</Box>
-      {position === t("Exchange") && (
-        <Flex
-          sx={{
-            justifyContent: "space-between",
-            position: "absolute",
-            bottom: "10px",
-            right: "20px",
-            width: "100%",
-            marginLeft: "30px",
-            alignItems: "flex-end",
-          }}
-        >
-          <Box sx={{ margin: "0 0 5px 40px" }}>
-            <RunFiatButton runFiat={runFiat} t={t} track={track} position="Tab" chainId={chainId} />
-          </Box>
-        </Flex>
-      )}
-      {position === t("More") && (
-        <Flex
-          sx={{
-            justifyContent: "space-between",
-            position: "absolute",
-            bottom: "10px",
-            right: "20px",
-            width: "35%",
-            marginLeft: "30px",
-            alignItems: "flex-end",
-          }}
-        >
-          <Flex sx={{ justifyContent: "space-between", alignItems: "flex-end", width: "100%" }}>
-            <StyledLink href="https://twitter.com/ape_swap" target="_blank" rel="noopener noreferrer">
-              <TwitterIcon
-                color="white3"
-                fill={iconFillColor}
-                onClick={() => trackClick(track, event, position, chainId, "twitter", "https://twitter.com/ape_swap")}
-              />
-            </StyledLink>
-            <StyledLink href="https://t.me/ape_swap" target="_blank" rel="noopener noreferrer">
-              <TelegramIcon
-                color="white3"
-                fill={iconFillColor}
-                onClick={() => trackClick(track, event, position, chainId, "telegram", "https://t.me/ape_swap")}
-              />
-            </StyledLink>
-            <StyledLink href="https://discord.com/invite/ApeSwap" target="_blank" rel="noopener noreferrer">
-              <DiscordIcon
-                color="white3"
-                fill={iconFillColor}
-                onClick={() =>
-                  trackClick(track, event, position, chainId, "discord", "https://discord.com/invite/ApeSwap")
-                }
-              />
-            </StyledLink>
-          </Flex>
-        </Flex>
-      )}
+      
     </Box>
   );
 };

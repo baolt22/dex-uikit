@@ -2,6 +2,7 @@ import { SwitchNetwork } from "../NetworkModal";
 import { Login } from "../WalletModal";
 import { TrackHandler } from "../../util/trackClick";
 import { Language } from "../../components/LangSelector/types";
+import React from "react";
 
 export interface LangType {
   code: string;
@@ -76,7 +77,7 @@ export interface NavProps extends PanelProps {
   track?: TrackHandler;
   liveResult?: LiveResultProps["apiResult"] | undefined;
   t: (text: string) => string;
-  runFiat: () => void;
+  logourl?: string;
   uDName?: string;
   iframe: boolean;
 }

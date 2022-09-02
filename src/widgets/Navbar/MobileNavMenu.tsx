@@ -196,49 +196,8 @@ const MobileNavMenu: React.FC<MobileNavMenuProps> = ({
             width: "90%",
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-evenly",
-              width: "200px",
-            }}
-          >
-            <StyledLink href="https://twitter.com/ape_swap" target="_blank" rel="noopener noreferrer">
-              <TwitterIcon
-                color="white3"
-                fill={iconFillColor}
-                onClick={() => trackClick(track, event, position, chainId, "twitter", "https://twitter.com/ape_swap")}
-              />
-            </StyledLink>
-            <StyledLink href="https://t.me/ape_swap" target="_blank" rel="noopener noreferrer">
-              <TelegramIcon
-                color="white3"
-                fill={iconFillColor}
-                onClick={() => trackClick(track, event, position, chainId, "telegram", "https://t.me/ape_swap")}
-              />
-            </StyledLink>
-            <StyledLink href="https://t.me/ape_swap" target="_blank" rel="noopener noreferrer">
-              <DiscordIcon
-                color="white3"
-                fill={iconFillColor}
-                onClick={() =>
-                  trackClick(track, event, position, chainId, "discord", "https://discord.com/invite/ApeSwap")
-                }
-              />
-            </StyledLink>
-          </div>
           <Flex sx={{ marginBottom: "15px" }}>
             <LangSelectorButton currentLang={currentLang} langs={langs} setLang={setLang} t={t} />
-            <RunFiatButton
-              mini
-              runFiat={runFiat}
-              t={t}
-              sx={{ width: "30px" }}
-              track={track}
-              position="NavBar"
-              chainId={chainId}
-            />
             <NetworkButton chainId={chainId} switchNetwork={switchNetwork} t={t} />
           </Flex>
         </Flex>

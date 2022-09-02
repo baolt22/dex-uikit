@@ -26,23 +26,6 @@ const ConnectModal: React.FC<Props> = ({ login, t }) => (
         />
       ))}
     </Flex>
-    <Flex sx={{ alignItems: "center", justifyContent: "center" }} mt="10px">
-      <Link
-        href="https://apeswap.gitbook.io/apeswap-finance/product-and-features/wallets/how-to-connect-your-wallet"
-        external
-        color="text"
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          alignSelf: "center",
-          marginTop: "24px",
-          "&:hover": { textDecoration: "underline" },
-        }}
-      >
-        <HelpIcon mr="6px" />
-        {t("Learn how to connect")}
-      </Link>
-    </Flex>
   </Modal>
 );
 

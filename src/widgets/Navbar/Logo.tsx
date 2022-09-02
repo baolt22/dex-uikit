@@ -5,10 +5,11 @@ import Flex from "../../components/Flex/Flex";
 import { MobileIcon } from "./icons";
 
 interface Props {
-  isPushed: boolean;
-  isDark: boolean;
-  togglePush: () => void;
-  href: string;
+  isPushed?: boolean;
+  isDark?: boolean;
+  togglePush?: () => void;
+  href?: string;
+  logourl?: string
 }
 
 const StyledLink = styled(Link)`
@@ -31,21 +32,13 @@ const StyledLink = styled(Link)`
 `;
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const Logo: React.FC<Props> = ({ isPushed, togglePush, isDark, href }) => {
-  const isAbsoluteUrl = href.startsWith("http");
-  const innerLogo = <MobileIcon width="40px" />;
+const Logo: React.FC<Props> = ({ isPushed, togglePush, isDark, href, logourl }) => {
 
   return (
     <Flex>
-      {isAbsoluteUrl ? (
-        <StyledLink as="a" href={href} aria-label="Apeswap home page">
-          {innerLogo}
-        </StyledLink>
-      ) : (
-        <StyledLink to={href} aria-label="Apeswap home page">
-          {innerLogo}
-        </StyledLink>
-      )}
+      <StyledLink as="a" href={href} aria-label="home page">
+        <img src={logourl} height={40} alt=""/>
+      </StyledLink>
     </Flex>
   );
 };

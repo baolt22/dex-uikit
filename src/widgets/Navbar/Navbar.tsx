@@ -18,7 +18,6 @@ import { HamburgerCloseIcon, HamburgerIcon } from "./icons";
 import MenuButton from "./MenuButton";
 import MobileNavMenu from "./MobileNavMenu";
 import { GlowCircle } from "../../components/GlowCircle";
-import { RunFiatButton } from "../../components/RunFiatButton";
 import styles from "./styles";
 import LangSelectorButton from "../../components/LangSelectorButton/LangSelectorButton";
 
@@ -107,7 +106,7 @@ const Navbar: React.FC<NavProps> = ({
   chainId,
   track,
   liveResult,
-  runFiat,
+  logourl,
   iframe,
 }) => {
   const { isXxl } = useMatchBreakpoints();
@@ -161,12 +160,12 @@ const Navbar: React.FC<NavProps> = ({
     <Wrapper>
       {!iframe && (
         <StyledNav showMenu={showMenu} isMobile={isMobile} isPushed={isPushed}>
-          <Logo
-            isPushed={isPushed}
+          {logourl && <Logo
+            isPushed={isPushed} logourl={logourl}
             togglePush={() => setIsPushed((prevState: boolean) => !prevState)}
             isDark={isDark}
-            href={homeLink?.href ?? "/"}
-          />
+            href={"/"}
+          />}
           {!isMobile && (
             <Flex sx={styles.rightMenu}>
               {links.map((link) => {
@@ -216,7 +215,6 @@ const Navbar: React.FC<NavProps> = ({
                           chainId={chainId}
                           track={track}
                           subMenu={found?.settings}
-                          runFiat={runFiat}
                           t={t}
                         />
                       </div>
@@ -236,15 +234,6 @@ const Navbar: React.FC<NavProps> = ({
             {!isMobile && (
               <Flex sx={{ alignItems: "center", marginRight: "10px" }}>
                 <LangSelectorButton currentLang={currentLang} langs={langs} setLang={setLang} t={t} />
-                <RunFiatButton
-                  mini
-                  runFiat={runFiat}
-                  t={t}
-                  sx={{ width: "30px" }}
-                  track={track}
-                  position="NavBar"
-                  chainId={chainId}
-                />
                 <NetworkButton chainId={chainId} switchNetwork={switchNetwork} t={t} />
               </Flex>
             )}
@@ -280,7 +269,7 @@ const Navbar: React.FC<NavProps> = ({
             liveResult={liveResult}
             currentLang={currentLang}
             t={t}
-            runFiat={runFiat}
+            runFiat={() => {}}
           />
         )}
         <Inner isPushed={isPushed} showMenu={showMenu} isMobile={isMobile}>
@@ -288,7 +277,7 @@ const Navbar: React.FC<NavProps> = ({
         </Inner>
         <MobileOnlyOverlay show={isPushed} onClick={() => setIsPushed(false)} role="presentation" />
       </BodyWrapper>
-      {!iframe && (
+      {/* {!iframe && (
         <Footer
           chainId={chainId}
           track={track}
@@ -302,7 +291,7 @@ const Navbar: React.FC<NavProps> = ({
           t={t}
           runFiat={runFiat}
         />
-      )}
+      )} */}
     </Wrapper>
   );
 };
