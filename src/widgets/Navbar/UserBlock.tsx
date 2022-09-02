@@ -22,7 +22,7 @@ const UserBlock: React.FC<Props> = ({ uDName, account, login, logout, t }) => {
   const buttonStyle = dynamicStyles.userBlockBtn({ account, uDName });
 
   const loadButton = () => {
-    if (uDName || account) {
+    if (account) {
       if (isXs) {
         return (
           <Button
@@ -33,9 +33,9 @@ const UserBlock: React.FC<Props> = ({ uDName, account, login, logout, t }) => {
             onClick={() => {
               onPresentAccountModal();
             }}
-            account={uDName || account}
+            account={account}
           >
-            <Text weight="normal">{uDName || accountEllipsis}</Text>
+            <Text weight="normal">{accountEllipsis}</Text>
           </Button>
         );
       }
@@ -48,9 +48,9 @@ const UserBlock: React.FC<Props> = ({ uDName, account, login, logout, t }) => {
           onClick={() => {
             onPresentAccountModal();
           }}
-          account={uDName || account}
+          account={account}
         >
-          <Text weight="normal">{uDName || accountEllipsis}</Text>
+          <Text weight="normal">{accountEllipsis}</Text>
         </Button>
       );
     }
@@ -62,7 +62,7 @@ const UserBlock: React.FC<Props> = ({ uDName, account, login, logout, t }) => {
         onClick={() => {
           onPresentConnectModal();
         }}
-        account={uDName || account}
+        account={account}
       >
         {t("Connect")}
       </Button>

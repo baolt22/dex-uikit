@@ -160,12 +160,15 @@ const Navbar: React.FC<NavProps> = ({
     <Wrapper>
       {!iframe && (
         <StyledNav showMenu={showMenu} isMobile={isMobile} isPushed={isPushed}>
-          {logourl && <Logo
-            isPushed={isPushed} logourl={logourl}
-            togglePush={() => setIsPushed((prevState: boolean) => !prevState)}
-            isDark={isDark}
-            href={"/"}
-          />}
+          {logourl && (
+            <Logo
+              isPushed={isPushed}
+              logourl={logourl}
+              togglePush={() => setIsPushed((prevState: boolean) => !prevState)}
+              isDark={isDark}
+              href={"/"}
+            />
+          )}
           {!isMobile && (
             <Flex sx={styles.rightMenu}>
               {links.map((link) => {
@@ -237,8 +240,8 @@ const Navbar: React.FC<NavProps> = ({
                 <NetworkButton chainId={chainId} switchNetwork={switchNetwork} t={t} />
               </Flex>
             )}
-            <UserBlock uDName={uDName} account={account} login={login} logout={logout} t={t} />
-            {(uDName || account) && profile && <Avatar profile={profile} />}
+            <UserBlock account={account} login={login} logout={logout} t={t} />
+            {account && profile && <Avatar profile={profile} />}
             {isMobile && (
               <MenuButton aria-label="Toggle menu" handleClick={() => setIsPushed(!isPushed)}>
                 {isPushed ? (

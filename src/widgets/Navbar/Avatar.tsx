@@ -46,18 +46,14 @@ const Avatar: React.FC<AvatarProps> = ({ profile }) => {
   // eslint-disable-next-line no-nested-ternary
   const icon = image ? (
     <AvatarImage image={image} />
-  ) : !isDark ? (
-    <MonkeyLight width="50px" height="50px" />
-  ) : (
-    <MonkeyDark width="50px" height="50px" />
-  );
+  ) : null;
 
   if (isExternal) {
     return (
       <StyledAvatar title={name}>
-        <a href={link} aria-label={ariaLabel}>
+        <div>
           {icon}
-        </a>
+        </div>
         {showPip && <Pip />}
       </StyledAvatar>
     );

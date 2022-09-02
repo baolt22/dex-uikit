@@ -9,7 +9,7 @@ interface Props {
   isDark?: boolean;
   togglePush?: () => void;
   href?: string;
-  logourl?: string
+  logourl?: string;
 }
 
 const StyledLink = styled(Link)`
@@ -33,11 +33,10 @@ const StyledLink = styled(Link)`
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Logo: React.FC<Props> = ({ isPushed, togglePush, isDark, href, logourl }) => {
-
   return (
     <Flex>
       <StyledLink as="a" href={href} aria-label="home page">
-        <img src={logourl} height={40} alt=""/>
+        <img src={logourl} height={40} alt="" />
       </StyledLink>
     </Flex>
   );

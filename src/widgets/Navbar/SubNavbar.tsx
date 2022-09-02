@@ -107,7 +107,6 @@ const SubNavbar: React.FC<SubNavbarProps> = ({
         })}
       </Box>
       <Box sx={styles.navImage}>{imageElement}</Box>
-      
     </Box>
   );
 };
