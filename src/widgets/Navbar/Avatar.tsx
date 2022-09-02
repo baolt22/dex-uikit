@@ -44,16 +44,12 @@ const Avatar: React.FC<AvatarProps> = ({ profile }) => {
   const isExternal = link.startsWith("http");
   const ariaLabel = "Link to profile";
   // eslint-disable-next-line no-nested-ternary
-  const icon = image ? (
-    <AvatarImage image={image} />
-  ) : null;
+  const icon = image ? <AvatarImage image={image} /> : null;
 
   if (isExternal) {
     return (
       <StyledAvatar title={name}>
-        <div>
-          {icon}
-        </div>
+        <div>{icon}</div>
         {showPip && <Pip />}
       </StyledAvatar>
     );
