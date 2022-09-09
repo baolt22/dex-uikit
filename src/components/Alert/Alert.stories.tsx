@@ -33,7 +33,7 @@ export const Default = (args: any) => {
 Default.args = {
   colorMode: "light",
   variant: "error",
-  text: "Swap 0.0001 BNB for 0.0501 BANANA",
+  text: "Swap 0.0001 BNB for 0.0501",
   linkText: "View on Explorer",
-  url: "https://apeswap.finance",
+  url: "",
 };

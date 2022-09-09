@@ -11,7 +11,7 @@ const darkTheme = {
   textSubtle: "#FFFFFF",
   borderColor: "#524B63",
   card: "#27262c",
-  yellow: "#FFB300",
+  yellow: "#00b8ff",
   gradients: {
     bubblegum: "linear-gradient(139.73deg, #313D5C 0%, #3D2A54 100%)",
   },

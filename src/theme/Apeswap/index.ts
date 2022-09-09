@@ -155,11 +155,11 @@ const Apeswap: Theme = {
       },
       "&:focus": {
         outline: "none",
-        boxShadow: "0px 0px 0px 1px #FFB300, 0px 0px 0px 4px rgb(255, 179, 0, .4)",
+        boxShadow: "0px 0px 0px 1px #00b8ff, 0px 0px 0px 4px rgb(255, 179, 0, .4)",
       },
       "&:hover:not(:disabled):not(:checked)": {
         borderColor: "yellow",
-        boxShadow: "0px 0px 0px 1px #FFB300, 0px 0px 0px 4px rgb(255, 179, 0, .4)",
+        boxShadow: "0px 0px 0px 1px #00b8ff, 0px 0px 0px 4px rgb(255, 179, 0, .4)",
       },
     },
     radio: {
@@ -196,7 +196,7 @@ const Apeswap: Theme = {
       },
       "&:focus": {
         outline: "none",
-        boxShadow: "0px 0px 0px 1px #FFB300, 0px 0px 0px 4px rgb(255, 179, 0, .2)",
+        boxShadow: "0px 0px 0px 1px #00b8ff, 0px 0px 0px 4px rgb(255, 179, 0, .2)",
       },
       "&:hover:not(:disabled):not(:checked)": {
         borderColor: "yellow",
@@ -211,13 +211,13 @@ const Apeswap: Theme = {
     },
   },
   borders: {
-    primaryButton: "3px solid #FFB300",
+    primaryButton: "3px solid #00b8ff",
     primaryBtnDisable: "3px solid transparent",
-    secondaryButton: "3px solid #FFB300",
+    secondaryButton: "3px solid #00b8ff",
     secondaryButtonDisable: "3px solid #FDFBF5",
     mode: {
       dark: {
-        secondaryButtonDisable: "3px solid #F9F4E7",
+        secondaryButtonDisable: "3px solid #e7eff9",
       },
     },
   },

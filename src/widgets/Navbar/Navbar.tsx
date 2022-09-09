@@ -52,7 +52,7 @@ const StyledNav = styled.nav<{ showMenu: boolean; isMobile: boolean; isPushed: b
   align-items: center;
   width: 100%;
   height: ${MENU_HEIGHT}px;
-  background-color: ${({ theme }) => theme.colors.navbar};
+  background-color: white;
   border-bottom: solid 2px rgba(133, 133, 133, 0.1);
   z-index: 20;
   transform: translate3d(0, 0, 0);
@@ -241,7 +241,7 @@ const Navbar: React.FC<NavProps> = ({
               </Flex>
             )}
             <UserBlock account={account} login={login} logout={logout} t={t} />
-            {account && profile && <Avatar profile={profile} />}
+            {/* {account && profile && <Avatar profile={profile} />} */}
             {isMobile && (
               <MenuButton aria-label="Toggle menu" handleClick={() => setIsPushed(!isPushed)}>
                 {isPushed ? (

@@ -1,17 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import ApeSpinner from "./ApeSpinner";
-import { SpinnerProps } from "./types";
 
 const Container = styled.div<{ size: number }>`
   position: relative;
   width: ${(props) => props.size}px;
 `;
 
-const Spinner: React.FC<SpinnerProps> = ({ size = 300 }) => {
+const Spinner: React.FC<any> = ({ size = 300, component }) => {
   return (
     <Container size={size}>
-      <ApeSpinner />
+      {component}
     </Container>
   );
 };

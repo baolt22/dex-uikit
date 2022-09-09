@@ -209,8 +209,8 @@ export const BottomRowContainer = styled.div`
 `;
 
 export const BuyBananaButton = styled.button`
-  border: 3px solid #ffb300;
-  color: #ffb300;
+  border: 3px solid #00b8ff;
+  color: #00b8ff;
   box-sizing: border-box;
   cursor: pointer;
   border-radius: 10px;
