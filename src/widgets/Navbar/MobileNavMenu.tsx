@@ -46,9 +46,9 @@ const Wrapper = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   justify-content: space-between;
   flex-grow: 100px;
   max-height: ${({ isPushed }) => (isPushed ? "100vh" : "0px")};
-  background-color: ${({ theme }) => theme.colors.navbar};
+  background-color: #fff;
   width: ${({ isPushed }) => `${isPushed ? "100" : "0"}%`};
-  border-right: ${({ isPushed }) => (isPushed ? "2px solid rgba(133, 133, 133, 0.1)" : 0)};
+  border-right: ${({ isPushed }) => (isPushed ? "2px solid #fff" : 0)};
   z-index: 11;
   transition: max-height 0.3s linear;
   overflow-y: scroll;
@@ -62,7 +62,7 @@ const Wrapper = styled.div<{ isPushed: boolean; showMenu: boolean }>`
     padding-bottom: 0px;
   }
   ${({ theme }) => theme.mediaQueries.nav} {
-    border-right: 2px solid rgba(133, 133, 133, 0.1);
+    border-right: 2px solid #fff;
     width: ${({ isPushed }) => `${isPushed ? "100" : "0"}%`};
   }
 `;
@@ -136,12 +136,11 @@ const MobileNavMenu: React.FC<MobileNavMenuProps> = ({
                           sx={{
                             ...styles.dropDownMenuText,
                             "&&&": {
-                              background:
-                                item.label === "GNANA" && "linear-gradient(53.53deg, #A16552 15.88%, #E1B242 92.56%)",
-                              WebkitBackgroundClip: item.label === "GNANA" && "text",
-                              backgroundClip: item.label === "GNANA" && "text",
-                              WebkitTextFillColor: item.label === "GNANA" && "transparent",
-                              textFillColor: item.label === "GNANA" && "transparent",
+                              background: "linear-gradient(53.53deg, #A16552 15.88%, #E1B242 92.56%)",
+                              WebkitBackgroundClip: "text",
+                              backgroundClip: "text",
+                              WebkitTextFillColor: "transparent",
+                              textFillColor: "transparent",
                             },
                             "&:hover": {
                               boxShadow: `0px 2px 0px ${iconFillColor}`,

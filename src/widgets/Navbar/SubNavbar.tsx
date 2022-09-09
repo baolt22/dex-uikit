@@ -80,11 +80,11 @@ const SubNavbar: React.FC<SubNavbarProps> = ({
                 sx={{
                   ...styles.dropDownMenuText,
                   "&&&": {
-                    background: item.label === "GNANA" && "linear-gradient(53.53deg, #A16552 15.88%, #E1B242 92.56%)",
-                    WebkitBackgroundClip: item.label === "GNANA" && "text",
-                    backgroundClip: item.label === "GNANA" && "text",
-                    WebkitTextFillColor: item.label === "GNANA" && "transparent",
-                    textFillColor: item.label === "GNANA" && "transparent",
+                    background: "linear-gradient(53.53deg, #A16552 15.88%, #E1B242 92.56%)",
+                    WebkitBackgroundClip: "text",
+                    backgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    textFillColor: "transparent",
                   },
 
                   "&:hover": {

@@ -15,7 +15,7 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   let hoverStyle = {
     "&:hover": {
-      "&:not([disabled])": { borderColor: "#FFDA00", background: variant === "primary" && "#FFDA00" },
+      "&:not([disabled])": { borderColor: "#005fff", background: variant === "primary" && "#005fff" },
       "&:disabled": {},
     },
   };
@@ -84,12 +84,12 @@ const Button: React.FC<ButtonProps> = ({
     >
       {React.isValidElement(startIcon) &&
         React.cloneElement(startIcon, {
-          mr: "0.5rem",
+          // mr: "0.5rem",
         })}
       {children} {load && <Icon color="currentColor" ml="5px" spin />}
       {React.isValidElement(endIcon) &&
         React.cloneElement(endIcon, {
-          ml: "0.5rem",
+          // ml: "0.5rem"
         })}
     </ThemeUIButton>
   );
