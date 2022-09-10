@@ -88,7 +88,6 @@ const MobileOnlyOverlay = styled(Overlay)`
 `;
 
 const Navbar: React.FC<NavProps> = ({
-  uDName,
   account,
   login,
   logout,
@@ -100,7 +99,6 @@ const Navbar: React.FC<NavProps> = ({
   currentLang,
   bananaPriceUsd,
   links,
-  profile,
   children,
   switchNetwork,
   chainId,
@@ -108,6 +106,7 @@ const Navbar: React.FC<NavProps> = ({
   liveResult,
   logourl,
   iframe,
+  footer
 }) => {
   const { isXxl } = useMatchBreakpoints();
   const isMobile = isXxl === false;
@@ -272,7 +271,7 @@ const Navbar: React.FC<NavProps> = ({
             liveResult={liveResult}
             currentLang={currentLang}
             t={t}
-            runFiat={() => {}}
+            runFiat={() => { }}
           />
         )}
         <Inner isPushed={isPushed} showMenu={showMenu} isMobile={isMobile}>
@@ -280,21 +279,7 @@ const Navbar: React.FC<NavProps> = ({
         </Inner>
         <MobileOnlyOverlay show={isPushed} onClick={() => setIsPushed(false)} role="presentation" />
       </BodyWrapper>
-      {/* {!iframe && (
-        <Footer
-          chainId={chainId}
-          track={track}
-          toggleTheme={toggleTheme}
-          bananaPriceUsd={bananaPriceUsd}
-          isDark={isDark}
-          switchNetwork={switchNetwork}
-          langs={langs}
-          setLang={setLang}
-          currentLang={currentLang}
-          t={t}
-          runFiat={runFiat}
-        />
-      )} */}
+      {!iframe && footer}
     </Wrapper>
   );
 };

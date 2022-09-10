@@ -3,6 +3,7 @@ import { Login } from "../WalletModal";
 import { TrackHandler } from "../../util/trackClick";
 import { Language } from "../../components/LangSelector/types";
 import React from "react";
+import { FooterProps } from "../../components/Footer";
 
 export interface LangType {
   code: string;
@@ -70,7 +71,6 @@ export interface LiveResultProps {
 export interface NavProps extends PanelProps {
   account?: string;
   login: Login;
-  profile?: Profile;
   logout: () => void;
   chainId: number;
   switchNetwork: SwitchNetwork;
@@ -78,6 +78,6 @@ export interface NavProps extends PanelProps {
   liveResult?: LiveResultProps["apiResult"] | undefined;
   t: (text: string) => string;
   logourl?: string;
-  uDName?: string;
   iframe: boolean;
+  footer?: React.FC<FooterProps>
 }
